@@ -25,7 +25,7 @@ class Animals():
         return [cat, caption]
     def give_me_a_dog():
         """
-        Get cats
+        Get dogs
         """
         caption = DOG_MAS[int(random.uniform(0, len(DOG_MAS)))]
         json = requests.get("https://dog.ceo/api/breeds/image/random").json()
