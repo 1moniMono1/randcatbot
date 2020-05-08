@@ -7,18 +7,27 @@ Telegram: @Sadykhzadeh [https://t.me/Sadykhzadeh]
 Github: https://github.com/sadykhzadeh
 '''
 
-import requests
 import random
-from config import cap_mas, dog_mas
+import requests
+from config import CAP_MAS, DOG_MAS
 
 class Animals():
-	def give_me_a_cat():
-		caption = cap_mas[int(random.uniform(0, len(cap_mas)))]
-		json = requests.get("https://api.thecatapi.com/v1/images/search").json()
-		cat = json[0]['url']
-		return [cat, caption]
-	def give_me_a_dog():
-		caption = dog_mas[int(random.uniform(0, len(dog_mas)))]
-		json = requests.get("https://dog.ceo/api/breeds/image/random").json()
-		dog = json['message']
-		return [dog, caption]
+    """
+    Get cats and dogs from special API
+    """
+    def give_me_a_cat():
+        """
+        Get cats
+        """
+        caption = CAP_MAS[int(random.uniform(0, len(CAP_MAS)))]
+        json = requests.get("https://api.thecatapi.com/v1/images/search").json()
+        cat = json[0]['url']
+        return [cat, caption]
+    def give_me_a_dog():
+        """
+        Get cats
+        """
+        caption = DOG_MAS[int(random.uniform(0, len(DOG_MAS)))]
+        json = requests.get("https://dog.ceo/api/breeds/image/random").json()
+        dog = json['message']
+        return [dog, caption]
